@@ -19,7 +19,7 @@ oauth.register(name='google',
                client_kwargs={'scope': 'openid email profile'})
 
 
-@router.post('/signin')
+@router.get('/signin')
 async def login(request: Request):
     redirect_uri = settings.GOOGLE_REDIRECT_URL
     log.info('Preparing oauth with redirect_uri', redirect_uri)
